@@ -22,7 +22,7 @@ public class DecisionTree implements Classifier {
     private double pValue = 1;
     private final double[] P_VALUES = {1, 0.75, 0.5, 0.25, 0.05, 0.005};
     private final double[][] CHI_SQUARE_DISTRIBUTION = {
-            //p: 1,  0.75,   0.5,  0.25,  0.05, 0.005
+            //p: 1,  0.75, 0.5,  0.25,  0.05, 0.005
             {0, 0, 0, 0, 0, 0}, // deg 0
             {0, 0.102, 0.455, 1.323, 3.841, 7.879}, // deg 1
             {0, 0.575, 1.386, 2.773, 5.991, 10.597}, // deg 2
