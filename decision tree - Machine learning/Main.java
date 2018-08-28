@@ -7,8 +7,10 @@ import java.io.IOException;
 
 import weka.core.Instances;
 
-public class MainHW2 {
+public class DT {
 
+
+    //sets input reader for a file
     public static BufferedReader readDataFile(String filename) {
         BufferedReader inputReader = null;
 
@@ -23,9 +25,9 @@ public class MainHW2 {
 
     /**
      * Sets the class index as the last attribute.
-     *
-     * @param fileName
-     * @return Instances data
+     * reads data from file
+     * @param fileName - the file to read from
+     * @return Instances  - data
      * @throws IOException
      */
     public static Instances loadData(String fileName) throws IOException {

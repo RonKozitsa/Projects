@@ -8,8 +8,10 @@ import java.util.Random;
 
 import weka.core.Instances;
 
-public class MainHW3 {
+public class MainKnn {
 
+
+    //sets input reader for a file
     public static BufferedReader readDataFile(String filename) {
         BufferedReader inputReader = null;
 
@@ -22,6 +24,13 @@ public class MainHW3 {
         return inputReader;
     }
 
+    /**
+     * Sets the class index as the last attribute.
+     * reads data from file
+     * @param fileName - the file to read from
+     * @return Instances  - data
+     * @throws IOException
+     */
     public static Instances loadData(String fileName) throws IOException {
         BufferedReader datafile = readDataFile(fileName);
         Instances data = new Instances(datafile);
@@ -33,11 +42,11 @@ public class MainHW3 {
         Instances autoPrice = loadData("auto_price.txt");
         FeatureScaler scaler = new FeatureScaler();
         Knn knn = new Knn();
-        MainHW3 mainHW3 = new MainHW3();
+        MainKnn mainKnn = new MainKnn();
         Random random = new Random();
         autoPrice.randomize(random);
-        mainHW3.bestFeatures("", knn, scaler, autoPrice, false);
-        mainHW3.bestFeatures("scaled", knn, scaler, autoPrice, true);
+        mainKnn.bestFeatures("", knn, scaler, autoPrice, false);
+        mainKnn.bestFeatures("scaled", knn, scaler, autoPrice, true);
     }
 
     /**

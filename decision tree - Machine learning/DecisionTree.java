@@ -591,7 +591,7 @@ public class DecisionTree implements Classifier {
         }
     }
 
-
+    //for organized and clear tree visualization
     private void printSpaces(Node node) {
         int n = printAux(node);
         for (int i = 0; i < n; i++) {
@@ -599,6 +599,7 @@ public class DecisionTree implements Classifier {
         }
     }
 
+    //finds how many spaces to print for each node
     private int printAux(Node node) {
         int i = 0;
         while (node.parent != null) {
@@ -607,6 +608,7 @@ public class DecisionTree implements Classifier {
         }
         return i;
     }
+
 
     private int getpIndex(double p_value) {
         for (int i = 0; i < P_VALUES.length; i++) {
@@ -619,16 +621,18 @@ public class DecisionTree implements Classifier {
 
     @Override
     public double[] distributionForInstance(Instance arg0) throws Exception {
-        // Don't change
         return null;
     }
 
     @Override
     public Capabilities getCapabilities() {
-        // Don't change
         return null;
     }
 
+
+    /*
+    getters
+     */
     public double getTreeMaxHeight() {
         return treeMaxHeight;
     }
