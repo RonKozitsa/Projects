@@ -11,7 +11,7 @@ import weka.core.Instances;
 public class MainKnn {
 
 
-    //sets input reader for a file
+    //sets input reader for a given file
     public static BufferedReader readDataFile(String filename) {
         BufferedReader inputReader = null;
 
