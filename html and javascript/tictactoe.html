@@ -25,13 +25,16 @@
 </table>
 <script> 
 var turn = "X";
+var hasWon = false;
 function checkCell(y){
+if(!hasWon){
 var x = document.getElementById(y);
 	if(x.innerHTML == "&nbsp;"){
 	x.innerHTML = turn;
 	changeTurns();
 	checkStatus();
 	}
+}
 }
 
 function changeTurns(){
@@ -61,9 +64,13 @@ var y = document.getElementsByTagName("p");
 			if(getData(w) == "X"){x++;}
 			if(getData(w) == "O"){o++;}
 				if (x == 3){
-				y[0].innerHTML = "X has won!";	 
+				y[0].innerHTML = "X has won!";	
+				hasWon = true;	
+				return;
 				} else if (o == 3){ 
-				y[0].innerHTML = "O has won!";	 
+				y[0].innerHTML = "O has won!";	
+				hasWon = true;	
+				return;
 			}
 		}
 	}
@@ -76,20 +83,28 @@ o = 0;
 		if(getData(z+i) == 'X'){x++;}
 		if(getData(z+i) == 'O'){o++;}  
 			if (x == 3){ 
-			y[0].innerHTML = 'X has won!';	 
+			y[0].innerHTML = 'X has won!';
+			hasWon = true;	
+			return;			
 			} else if (o == 3){ 
 			y[0].innerHTML = 'O has won!';	 
+			hasWon = true;	
+			return;
 		}
 	}
 }
 //checks diagonals 
 	if(getData(5) == "X"){
-		if(getData(1) && getData(9) == "X" || getData(3) && getData(7) == "X"){
+		if((getData(1) == "X" && getData(9) == "X") || (getData(3) == "X" && getData(7) == "X")){
 		y[0].innerHTML = 'X has won!';	
+		hasWon = true;	
+		return;
 		}
 	if(getData(5) == "O"){
-		if(getData(1) && getData(9) == "O" || getData(3) && getData(7) == "O"){
-		y[0].innerHTML = 'O has won!';	 
+		if((getData(1)  == "O" && getData(9) == "O") || (getData(3)  == "O" && getData(7) == "O")){
+		y[0].innerHTML = 'O has won!';	
+		hasWon = true;	
+		return;
 		}
 	}
 	}

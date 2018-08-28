@@ -7,14 +7,14 @@
 <body>
 <form action="http://localhost:4567/check-answers" method="get" id="myForm">
 <ol>
-<li> what is your favourite color<br/>
+<li> try to guess what is my favourite color<br/>
 <input type="radio" name="b" value="red"> <tag>red</tag> 	 <result></result>	<br/>
 <input type="radio" name="b" value="blue"> <tag>blue</tag>	 <result></result>	<br/>
 <input type="radio" name="b" value="green"> <tag>green</tag> <result></result>	<br/>
 <input type="radio" name="b" value="other"> <tag>other</tag> <result></result>	<br/>
 <li> If you choose an answer to this question at random, what is the probability that you answer correctly?	<br/>
 <input type="radio" name="a" value="1"> <tag1>50%</tag1> 	<result1></result1> 	<br/>
-<input type="radio" name="a" value="2"> <tag1>25%</tag1> 	<result1></result1>	<br/>
+<input type="radio" name="a" value="2"> <tag1>30%</tag1> 	<result1></result1>	<br/>
 <input type="radio" name="a" value="3"> <tag1>0%</tag1> 	<result1></result1>	<br/>
 <input type="radio" name="a" value="4"> <tag1>25%</tag1>	<result1></result1>	<br/>
 </ol>
@@ -22,34 +22,41 @@
 <input type="checkbox" id="checkbox" value="changed" > use javaScript checking
 </form>
 <script>
-function check() {
-if(document.getElementById("checkbox").checked){
+
+var attempts = 0;
+var y = document.getElementsByName("a");
 var x = document.getElementsByName("b");
+var t = document.getElementsByTagName("tag");
+var u = document.getElementsByTagName("result");
+var r = document.getElementsByTagName("tag1");
+var w = document.getElementsByTagName("result1");
+
+function check() {
+	attempts++;
+	if(attempts > 1){
+	clearData();
+}
+if(document.getElementById("checkbox").checked){
 var i;
 	for(i = 0 ; i < x.length ; i++){
 		if (x[i].checked){
-		var t = document.getElementsByTagName("tag");
-		var u = document.getElementsByTagName("result");
 			if(x[i].value == "blue"){
 			t[i].style.fontWeight = "bold";
-			u[i].textContent += "Correct";
+			u[i].textContent = "Correct";
 			}else{
 			t[i].style.fontWeight = "bold";
-			u[i].textContent += "Incorrect";
+			u[i].textContent = "Incorrect";
 			}
 		}
 	}
-var y = document.getElementsByName("a");
 	for(i = 0 ; i < y.length ; i++){
 		if (y[i].checked){
-		var r = document.getElementsByTagName("tag1")
-		var w = document.getElementsByTagName("result1")
 			if(y[i].value == "4"){
 			r[i].style.fontWeight = "bold";
-			w[i].textContent += "Correct";
+			w[i].textContent = "Correct";
 			}else{
 			r[i].style.fontWeight = "bold";
-			w[i].textContent += "Incorrect";
+			w[i].textContent = "Incorrect";
 			}
 		}
 	}
@@ -57,6 +64,16 @@ var y = document.getElementsByName("a");
 else{
 var m = document.getElementById("myForm");
 m.submit();
+}
+}
+
+function clearData(){
+var i;
+for(i = 0 ; i < x.length ; i++){
+u[i].textContent = "";
+w[i].textContent = "";
+r[i].style.fontWeight = "normal";
+t[i].style.fontWeight = "normal";
 }
 }
 
