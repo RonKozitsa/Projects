@@ -1,4 +1,3 @@
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Hangman {
@@ -25,8 +24,8 @@ public class Hangman {
 
         //runs while game is not over
         while (!(gameEnd)) {
+            System.out.println("\nput your guess : \n(you might guess the whole word or a single character [a-z])\n");
             if (scanner.hasNext()) {
-                System.out.println("\nput your guess : \n(you might guess the whole word or a single character [a-z])\n");
                 guess = scanner.nextLine();
 
                 //validates good input (ignores 'empty' enters)
@@ -55,7 +54,7 @@ public class Hangman {
             return true;
         }else{
             //word guessed not correctly
-            System.out.println("nope\n\n");
+            System.out.println("nope\n");
             wrongAttempts++;
             return currentState.printState(wrongAttempts,dictionary);
         }
@@ -76,7 +75,7 @@ public class Hangman {
             return currentState.printState(wrongAttempts,dictionary);
         }else{
             //if character is not in word
-            System.out.println("nope\n\n");
+            System.out.println("nope\n");
             guessedCharacters.append(character.toString());
             return currentState.printState(++wrongAttempts,dictionary);
             }

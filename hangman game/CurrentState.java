@@ -84,7 +84,7 @@ public class CurrentState {
                     "  |  /|\\\n" +
                     "__|__/ \\\n";
 
-            System.out.println(state + " you've been hanged");
+            System.out.println(state + "you've been hanged");
             return true;
         }
         System.out.println(state);

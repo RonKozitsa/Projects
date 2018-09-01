@@ -1,7 +1,5 @@
-import jdk.internal.dynalink.beans.StaticClass;
 
 import java.util.HashMap;
-import java.util.StringJoiner;
 
 public class Dictionary {
     private HashMap<Character , Boolean> dictionary;
