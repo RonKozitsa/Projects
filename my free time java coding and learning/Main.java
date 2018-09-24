@@ -35,47 +35,6 @@ public class Main {
 //        System.out.println(list.getIntersection(list2).value);
 
 
-
-
-
-//        //--------------------------------------------------------
-//        Interfacing + Inheritance + Polymorphism
-//        System.out.println("\n\npart 2\n------------");
-//        Flying_Animals animals = new kakadu();
-//        System.out.println(animals.canBeatEagle());
-//        Flying_Animals superEagle = new SuperEagle();
-//        System.out.println(superEagle.canBeatEagle());
-//
-
-
-
-
-
-//        //---------------------------------------------------------
-//        //Collections
-//        System.out.println("\n\npart 3\n------------");
-//        Collections birdArrayList = new Collections();
-//        birdArrayList.createAndPrintBirdArrayList();
-
-
-
-
-
-
-        //---------------------------------------------
-        //files
-//        System.out.println("\n\npart 3\n\n\n------------");
-//        Files files = new Files();
-//        BufferedReader reader = files.readDataFile("data.json");
-//        RandomAccessFile file = new RandomAccessFile("data.json","rw");
-//        files.modifyData(file);
-
-
-
-
-
-
-
         //---------------------------------------------
         //general
 //        int num1 = 10;
@@ -85,14 +44,6 @@ public class Main {
 //        num1 = num2 ^ num1;
 //        System.out.println(num1);
 //        System.out.println(num2);
-
-
-
-
-
-
-
-
 
 
         //--------------------------------
@@ -137,7 +88,6 @@ public class Main {
 //        System.out.println(queue.dequeue());
 
 
-
         //---------------------------------
         //binaryTree
 //        binaryTree binaryTree = new binaryTree();
@@ -159,21 +109,5 @@ public class Main {
 //        binaryTree.printInOrder(root);
 //        binaryTree.printPreOrder(root);
 
-
-
-        //message read and write
-        int[] messages = initArray(1000);
-        Multithreading multithreading = new Multithreading(messages);
-        multithreading.reader = new Thread(multithreading);
-        multithreading.writer = new Thread(multithreading);
-        multithreading.startMessaging();
-    }
-
-    public static int[] initArray(int n){
-        int[] array = new int[n];
-        for (int i = 0; i < n  ; i++) {
-            array[i] = i;
-        }
-        return array;
     }
 }

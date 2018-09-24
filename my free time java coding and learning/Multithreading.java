@@ -9,13 +9,12 @@ implemented with critical section and mutex.
 
 public class Multithreading implements Runnable {
     Mutex lock = new Mutex();
-    public Thread writer;
-    public Thread reader;
+    public Thread writer = new Thread();
+    public Thread reader = new Thread();
     int[] messages;
     boolean[] isValid;
     int writerMessagesPointer = 0;
     int readerMessagePointer = 0;
-    boolean youAreReader = false;
 
     public Multithreading(int[] messages) {
         this.messages = messages;
@@ -32,15 +31,15 @@ public class Multithreading implements Runnable {
     @Override
     public void run() {
         lock.lock();
-        if (youAreReader) {
+        //allows reader thread to enter
+        if (Thread.currentThread().getId() == reader.getId()) {
             lock.unlock();
             while (true) {
                 readMessage();
-
             }
         }else{
+            //writer's part
             lock.unlock();
-            youAreReader = true;
             for (int i = 0; i < messages.length; i++) {
                writeMessage(messages[writerMessagesPointer]);
            }
@@ -80,4 +79,21 @@ public class Multithreading implements Runnable {
 
 
 
+    public static void main(String[] args) {
+        //message read and write
+        int[] messages = initArray(1000);
+        Multithreading multithreading = new Multithreading(messages);
+        multithreading.reader = new Thread(multithreading);
+        multithreading.writer = new Thread(multithreading);
+        multithreading.startMessaging();
+    }
+
+
+    public static int[] initArray(int n){
+        int[] array = new int[n];
+        for (int i = 0; i < n  ; i++) {
+            array[i] = i;
+        }
+        return array;
+    }
 }
