@@ -1,12 +1,15 @@
 import requests
 from bs4 import BeautifulSoup
 
+#crawl on ebay and get items name and url
+
+# max_pages = number of ebay pages to crawl
 def pageCrawl(max_pages):
     page = 1
     while page <= max_pages:
         url = "https://www.ebay.com/sch/i.html?_from=R40&_nkw=dogs+toys&_sacat=1&_pgn=" + str(page)
         source_code = requests.get(url)
-    # gets what we need (removes all the crap)
+    # gets just what we need
         plain_text = source_code.text
     # convert into a 'beautiful soup' Object
         soupObject = BeautifulSoup(plain_text)
@@ -21,7 +24,7 @@ def pageCrawl(max_pages):
 
 def get_data_from_link(link):
     source_code = requests.get(link)
-    # gets what we need (removes all the crap)
+    # gets just what we need
     plain_text = source_code.text
     # convert into a 'beautiful soup' Object
     soupObject = BeautifulSoup(plain_text)
