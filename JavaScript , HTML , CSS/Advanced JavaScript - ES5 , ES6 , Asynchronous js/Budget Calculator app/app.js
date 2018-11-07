@@ -93,9 +93,9 @@ var userInterface = (function(){
         //update all budget fields
         updateBudget : function(newBudget , income , expense , precentage){
             var budgetSign = income > expense ? "income" : "expense";
-            document.querySelector(DOMstrings.budgetValue).textContent =formatNumber(parseInt(newBudget),budgetSign);
-            document.querySelector(DOMstrings.income_value).textContent = formatNumber(parseInt(income),"income");
-            document.querySelector(DOMstrings.expenses_value).textContent =formatNumber(parseInt(expense),"expense");
+            document.querySelector(DOMstrings.budgetValue).textContent =formatNumber(Math.abs(parseFloat(newBudget)),budgetSign);
+            document.querySelector(DOMstrings.income_value).textContent = formatNumber(parseFloat(income),"income");
+            document.querySelector(DOMstrings.expenses_value).textContent =formatNumber(parseFloat(expense),"expense");
             document.querySelector(DOMstrings.budgetPrecentage).textContent = (income > 0) ? (Math.round(precentage) + "%") : "---";
             },
         
