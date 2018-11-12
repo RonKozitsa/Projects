@@ -7,7 +7,7 @@ export default class Recipe{
     
     async getRecipe(){
         try{
-            const key = "08b5f91c6cd8ba4774d5c63b48fb8f54";
+            const key = "29fd5f9247aa995dcab6b7488977bfa7";
             const result = await axios(`https://www.food2fork.com/api/get?key=${key}&rId=${this.id}`);
             this.title = result.data.recipe.title;
             this.image = result.data.recipe.image_url;

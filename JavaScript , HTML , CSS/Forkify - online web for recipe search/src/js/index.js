@@ -109,8 +109,9 @@ DOM_ELEMENTS.recipe.addEventListener('click', e => {
     }else if (e.target.matches('.button-increase, .button-increase *')){ 
         state.recipe.updateServings('inc');
         updateRecipeData(state.recipe);
-    }else if(e.target.matches('.recipe__btn--addToList', '.recipe__btn--addToList *')){
+    }else if(e.target.matches('.recipe__btn--addToList')){
             controlList();
+            ShoppingListView.addButton(state.list);
     }else if(e.target.matches('.recipe__love') || e.target.matches('.header__likes')){
             controlLikes();
     }
@@ -122,20 +123,28 @@ const controlList = () => {
     if (!state.list) state.list = new ShoppingList();
 
     // Add each ingredient to the list and UI
-    state.recipe.ingredients.forEach(el => {
-        state.list.addItem(el);
-        ShoppingListView.displayItem(el);
+    state.recipe.ingredients.forEach((el ,index) => {
+        const newItem = state.list.addItem(el);
+        ShoppingListView.displayItem(newItem);
     });
 };
 
 // Handle delete and update list item events
 DOM_ELEMENTS.shoppingList.addEventListener('click', e => {
-    const id = e.target.closest('.shopping__item').dataset.itemId;
+    //case 'delete all' button was pressed
+     if(e.target.matches('.list_button')){
+        ShoppingListView.deleteAll();
+        state.list.removeAllItems();
+        return;
+    }
+    const id = e.target.closest('.shopping__item').dataset.itemid;
 
     // Handle the delete button
-    if (e.target.matches('.shopping__delete, .shopping__delete *')) {
+    if (e.target.matches('.shopping__delete') || e.target.matches('.X_Button')){
         // Delete from state
         state.list.removeItem(id);
+        //if no more items in list , remove the button
+        if(state.list.items.length == 0) ShoppingListView.removeButton();
 
         // Delete from UI
         ShoppingListView.deleteItem(id);

@@ -13,6 +13,7 @@ export default class ShoppingList{
             id : uniqid()  //using unique ID library
         }
         this.items.push(newItem);
+        return newItem;
     }
     removeItem(id){
         const index = this.items.findIndex(elem => elem.id === id); //get the index of the element to delete
@@ -22,5 +23,8 @@ export default class ShoppingList{
     updateCount(id , newCount){
         //find = find the element and not the index of it
         this.items.find(element => element.id === id).count = newCount; 
+    }
+    removeAllItems(){
+        this.items = [];
     }
 };

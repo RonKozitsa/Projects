@@ -6,7 +6,7 @@ export default class Search{
     }
 
     async getResults() {
-    const key = "08b5f91c6cd8ba4774d5c63b48fb8f54";
+    const key = "29fd5f9247aa995dcab6b7488977bfa7";
     try{
     //axois - like fetch but better , returns the data as json file
     const res = await axois(`https://www.food2fork.com/api/search?key=${key}&q=${this.query}`);
