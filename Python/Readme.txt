@@ -1,2 +1,2 @@
-Self-taught Python at home by videos and online tutorials.
-I will upload here the projects I will be implementing.
+Make sure to check out my Machine-learning and Deep-learning folder to see high code performance 
+and implemantations of complex machine learning models using Python and Python scientific libraries
