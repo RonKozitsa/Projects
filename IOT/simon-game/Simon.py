@@ -88,17 +88,14 @@ def end_game():
 
 def button_pushed_callback(channel):
     global computer_moves, index
+    index += 1
     if channel == gpioPin_button_blue and gpioPin_led_blue == computer_moves[index]:
-        index += 1
         activate_led(gpioPin_led_blue, frequencies[gpioPin_led_blue])
     elif channel == gpioPin_button_red and gpioPin_led_red == computer_moves[index]:
-        index += 1
         activate_led(gpioPin_led_red, frequencies[gpioPin_led_red])
     elif channel == gpioPin_button_yellow and gpioPin_led_yellow == computer_moves[index]:
-        index += 1
         activate_led(gpioPin_led_yellow, frequencies[gpioPin_led_yellow])
     elif channel == gpioPin_button_green and gpioPin_led_green == computer_moves[index]:
-        index += 1
         activate_led(gpioPin_led_green, frequencies[gpioPin_led_green])
     else:
         end_game()
