@@ -1,0 +1,12 @@
+input{
+    padding: 1%;
+    margin: 0 1%;
+    background-color: blanchedalmond;
+}
+
+button{
+    width: 30%;
+    margin: 0 5% ;
+    color: orange;
+    background-color: gray;
+}
