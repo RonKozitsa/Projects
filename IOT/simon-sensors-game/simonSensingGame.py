@@ -99,20 +99,6 @@ def end_game():
     sleep(3)
 
 
-def button_pushed_callback(channel):
-    global computer_moves, index
-    index += 1
-    if channel == gpioPin_button_blue and gpioPin_led_blue == computer_moves[index]:
-        activate_led(gpioPin_led_blue, frequencies[gpioPin_led_blue])
-    elif channel == gpioPin_button_red and gpioPin_led_red == computer_moves[index]:
-        activate_led(gpioPin_led_red, frequencies[gpioPin_led_red])
-    elif channel == gpioPin_button_yellow and gpioPin_led_yellow == computer_moves[index]:
-        activate_led(gpioPin_led_yellow, frequencies[gpioPin_led_yellow])
-    elif channel == gpioPin_button_green and gpioPin_led_green == computer_moves[index]:
-        activate_led(gpioPin_led_green, frequencies[gpioPin_led_green])
-    else:
-        end_game()
-
 print('Reading MCP3008 values, press Ctrl-C to quit...')
 # Print nice channel column headers.
 print('| {0:>4} | {1:>4} | {2:>4} | {3:>4} | {4:>4} | {5:>4} | {6:>4} | {7:>4} |'.format(*range(8)))
