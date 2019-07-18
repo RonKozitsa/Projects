@@ -7,7 +7,7 @@ We implemented two recommendation engines:
 	1. for students
 	2. for MiLab managers / lecturers 
 
-Demo video: https://youtu.be/HfXdsjgLwv8
+Demo video: https://www.youtube.com/watch?v=xTRVYumJjgQ
 
 Below, we elaborate on the functionalities of both engines.
 
