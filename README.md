@@ -1,6 +1,6 @@
 Recently updated 18.07.2019 :
 
-* Foodies - Hackathon project - an app to help pepole eat never eat lunch alone again, enter the app and find a partner to eat with !
+* Foodies - Hackathon project - an app to help pepole never eat lunch alone again, enter the app and find a partner to eat with !
 * IOT - final course project "MRS" : Milab recommendation system
 * HACKIDC2019 - My hackathon project at IDC , won first place in the challenge competition ! 
 * Java - Added 'Graphics' project - seamCarving + Nearest neighbor , includes a nice UI app for playing with the pictures 
