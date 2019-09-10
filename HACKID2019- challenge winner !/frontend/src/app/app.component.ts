@@ -1,6 +1,6 @@
 import { ServerServiceService } from './services/server-service.service';
 import { Component } from '@angular/core';
-import {RonsHelperService } from './rons-helper.service';
+import {RonsHelperService } from './services/rons-helper.service';
 
 declare global {
   interface Window { fbAsyncInit: any; }
@@ -98,7 +98,7 @@ export class AppComponent {
 
   talkToServer(){
     this.serverService.sendRequest(this.comments);
-    this.showPlot(this.helper.getHelper());
+    this.showPlot(this.helper.data);
   }
 
   showPlot(message_array){

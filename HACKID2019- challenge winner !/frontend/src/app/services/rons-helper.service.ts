@@ -4,16 +4,18 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class RonsHelperService {
-  helper = [];
 
   constructor() { 
   }
 
-  setHelper(data){
-    this.helper = data;
+  set data(data){
+    if (!data){
+      this.data = [];
+    }
+    this.data = data;
   }
   
-  getHelper(){
-    return this.helper;
+  get data(){
+    return this.data;
   }
 }
