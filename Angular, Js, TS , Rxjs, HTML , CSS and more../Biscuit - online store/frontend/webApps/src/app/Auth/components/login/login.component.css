@@ -1,0 +1,21 @@
+.container * {
+    text-align: center;
+    margin-top: 2%;
+}
+
+h1{
+    margin-bottom: 5%;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+}
+
+.buttons-container *{
+    margin: 1%;
+}
+
+.rememberMe {
+    margin-left: 10px;
+}

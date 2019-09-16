@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Quiz game !</title>
+    </head>
+
+    <body>
+        <h1>Console Quiz Game !</h1>
+		<br/>
+		<h3>open your console and lets get started ! </h3>
+		<h4> (to open console -> right click , press 'inspect' , and go to 'console' tab)</h4>
+        <input type= "button" id="Button" value="Start quiz">
+        <input type= "button" id="add_question" value="Add your own question to the quiz">
+        <script>
+		
+/* make code annonymous */
+(function (){
+
+var result = 0;
+/* define question Object */
+var Question = function (question , answers , correctAnswer){
+    this.question = question;
+    this.answers =  answers;
+    this.correctAnswer = correctAnswer;
+} 
+
+Question.prototype.askQuestion = function() {
+    console.log(this.question);
+    for (var i = 0; i < this.answers.length; i++){
+        console.log((i+1) + ". " + this.answers[i]);
+    }
+}
+
+
+
+//starting qustions
+questions = [
+new Question("what is the largest freshwater lake in the world?" ,["Lake Superior","Lake Victoria", "Lake Michigan" , "Great Slave Lake" ] ,1),
+new Question("What kind of weapon is a falchion?" , ["Gun" , "Sword", "Missle" , "lazer"], 2),
+new Question("Where would you find the Sea of Tranquility?",["Australia", "America" , "The moon" ,"Thailand"], 3),
+new Question("3 * 5 - (9 - 7 ) / 2 + 4 * (2-1) = ?" ,["10.5" ,"17" , "18" , "0"],3),
+new Question("What is the world's longest river?" , ["Amazon" , "Ebay" , "Facebbok" , "Google"],1),
+new Question("Name the world's largest ocean" , ["Indian","Pacific" , "Arctic" , "Atlantic" , "Southern Ocean"] , 2)];
+
+//start the quiz
+document.getElementById("Button").addEventListener("click",function(){
+    result = 0;
+    askQuestions(questions);
+});
+
+//add question by user
+document.getElementById("add_question").addEventListener("click",function(){
+    var question = prompt("write your question");
+	if(question == null){
+			return;
+		}
+    var answer;
+    var answers = [];
+    while((answer = prompt("write a possible answer (or write 'STOP' if you have no more)")) != "STOP"){
+		if(answer == null){
+			return;
+		}
+        answers.push(answer);
+    }
+    console.log("your options are\n");
+    for(var i = 0; i < answers.length; i++){
+        console.log(i + 1 + " : " + answers[i]);
+    }
+    answer = 0;
+    while(!(answer >= 1 && answer <= answers.length)){
+    answer = prompt("which answer is the correct one ? (write the answer number)");
+	if(answer == null){
+			return;
+		}
+    }
+    questions.push(new Question(question , answers , answer));
+})
+    
+
+//questions being asked
+var askQuestions = function (questions){
+    var allowd = questions.slice();
+    while(allowd.length > 0){
+    console.log("Question " + (questions.length - allowd.length + 1) + " / " + questions.length + "\n");
+    var index = Math.floor(Math.random() * allowd.length);
+    var question = allowd[index];
+    question.askQuestion();
+    var answer = prompt("Select the right answer : \n write 'quit' to exit quiz");
+    while(answer == "" || answer == null){
+        alert("please type an answer or type 'quit' to exit \n");
+		answer = prompt("Select the right answer : \n write 'quit' to exit quiz");
+    }
+    switch (true){
+        case (question.correctAnswer == answer):
+            result++;
+            console.log("Correct !\nResult : " + result + "\n");
+            break;
+        case (answer == "quit"):
+            console.log("Done !\n");
+            return;
+        default : 
+            console.log("Wrong\nResult : " + result + "\n");
+    }
+    console.log("-------------------------------------");
+    allowd.splice(index,1);
+    }
+	console.log("Your result : " + result + "/" + questions.length + "\n");
+}
+})();
+		</script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<div class="card biscuit-card">
+    <img class="card-img-top img-responsive biscuit-img" [src]="pictureURL" alt="Card image">
+    <div class="card-body flex">
+        <h6 class="card-subtitle mb-2 text-muted">Pet type : {{animalType}} | Category : {{productType}}</h6>
+        <div class="item-info">
+            <p class="card-title">{{name | shortenText:25}}</p>
+            <p class="card-description"> {{desc | shortenText:25}} </p>
+            <p class="card-footer" >Price : {{price}} $</p>
+            <a *ngIf="!isInCart else inCartTemplate" (click)="addToCart()" class="btn btn-primary">Add to cart</a>
+            <span *ngIf="notifyAdded && !isInCart" class="biscuit-success under-button-in-cart" [@fadeInOut]>Added to cart !</span>
+        </div>
+    </div>
+</div>
+
+<ng-template #inCartTemplate>
+    <div class="flex">
+        <button class="btn btn-info btn-sm" (click)="addToCart()">Add another</button>
+        <div>{{amountInCart}}</div>
+        <button class="btn btn-info btn-sm" (click)="askIfDeleteItem.emit(this)">Remove from cart</button>
+        <span *ngIf="notifyAdded" class="biscuit-success under-button-not-in-cart" [@fadeInOut]>Added to cart !</span>
+    </div>
+</ng-template>

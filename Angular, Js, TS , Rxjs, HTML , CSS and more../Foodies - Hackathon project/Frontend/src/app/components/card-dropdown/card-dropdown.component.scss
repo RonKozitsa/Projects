@@ -1,0 +1,22 @@
+@import '../../scss/variables';
+
+button {
+    border-radius: $border-radius;
+    text-align: center;
+    transform: translate(35%, -50%);
+    width: 15vw;
+    font-size: 1.5vh;
+}
+
+.card-button{
+    background-color: rgb(241, 234, 234);
+    filter: drop-shadow(16px 12px 20px black);
+}
+
+.dropdown-menu{
+    transform: translate3d(35%, 12%, 0px);
+    max-height: 150px;
+    max-width: 50vw;
+    min-width: 25vh;
+    overflow: scroll;
+}

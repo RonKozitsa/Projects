@@ -1,0 +1,86 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ag-grid-community/dist/styles/ag-grid.css";
+@import "~ag-grid-community/dist/styles/ag-theme-balham.css";
+
+body {
+  background-image: url('https://venngage-wordpress.s3.amazonaws.com/uploads/2018/09/Simple-Background-Images-10.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1,h2,h3,h4,h5,h6{
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-column{
+  display: flex;
+  flex-direction: column;
+}
+
+.biscuit-alert {
+  color: rgb(231, 52, 52);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.biscuit-success {
+  color: rgb(25, 124, 30);
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.biscuit-info-card {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGkwfK42bfpEV2Fy5QydoHnTArVRNfDnav2Gkm7QrAvPFe3AeoKQ');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: black solid 1px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  color: rebeccapurple;
+  z-index: -1;
+}
+
+.background-red{
+  background-color: rgb(233, 77, 77);
+}
+
+
+.biscuit-loader {
+  position: relative;
+  left: 49%;
+  margin-top: 10px;
+  border: 6px solid #f3f3f3; /* Light grey */
+  border-top: 6px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  animation: spin 2s linear infinite;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.form-control {
+  width: 50%;
+  margin-left:25%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

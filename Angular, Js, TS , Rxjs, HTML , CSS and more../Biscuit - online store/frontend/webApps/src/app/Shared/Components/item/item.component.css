@@ -1,0 +1,40 @@
+p {
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 250px;
+}
+
+a {
+    color: white !important;
+}
+
+.biscuit-card {
+    position: static;
+    text-align: center;
+    width: 300px;
+    height: 450px;
+}
+
+.buttons-template{
+    margin: 30px 80px;
+}
+
+.biscuit-img {
+    min-height: 200px;
+    max-height: 200px;
+}
+
+.item-info {
+    width: 100%;
+}
+
+.under-button-in-cart {
+    position: absolute;
+    transform: translate(-100px, 40px);
+}
+
+.under-button-not-in-cart {
+    position: absolute;
+    transform: translate(60px,35px);
+}
+

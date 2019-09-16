@@ -1,0 +1,66 @@
+<div *ngIf="displayLoader else cartTemplate" class="biscuit-loader"></div>
+
+<ng-template #cartTemplate>
+  <div *ngIf="cartHasItems else epmtyCart" class="card biscuit-info-card cart-header">
+    <h4>Your cart</h4>
+  </div>
+  <div class="container">
+    <div class="flex">
+      <app-item *ngFor="let item of cartItems | keyvalue"
+                class="biscuit-card-cart text-align-center"
+                [_id]='item.value._id'
+                [name]='item.value.name'
+                [desc]='item.value.desc'
+                [productType]='item.value.productType'
+                [pictureURL]='item.value.pictureURL'
+                [price]='item.value.price'
+                [animalType]='item.value.animalType'
+                [isInCart]="true"
+                (askIfDeleteItem)="askIfSeleteItem($event)"
+      ></app-item>
+    </div>
+    <div *ngIf="cartHasItems" class="flex buttons">
+      <button [routerLink]="['/checkout']" class="btn btn-primary btn-checkout">Proceed to checkout</button>
+      <button class="btn btn-danger" (click)="clearCart()">Clear cart</button>
+    </div>
+  </div>
+</ng-template>
+
+
+<ng-template #askIfDeleteItemTemplate let-modal>
+  <div class="modal-header background-red">
+    <h4 class="modal-title" id="modal-basic-title">Delete from cart</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-align-center">
+    <p>Are you sure you want to remove <B>"{{askIfDeleteItemName}}"</B> from cart ?</p>
+  </div>
+  <div class="modal-footer flex">
+    <button type="button" ngbAutofocus class="btn btn-outline-dark" (click)="modal.dismiss()">Cancel</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Yes')">YES</button>
+  </div>
+</ng-template>
+
+<ng-template #deleteCartTemplate let-modal>
+  <div class="modal-header background-red">
+    <h4 class="modal-title">Delete cart</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body text-align-center">
+    <p>Are you sure you want to delete your cart ?</p>
+  </div>
+  <div class="modal-footer flex">
+    <button type="button" ngbAutofocus class="btn btn-outline-dark" (click)="modal.dismiss()">Cancel</button>
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Yes')">YES</button>
+  </div>
+</ng-template>
+
+<ng-template #epmtyCart>
+  <h2 class="empty-cart biscuit-info-card"> Your cart is empty... Go and buy something for your pet !</h2>
+</ng-template>
+
+

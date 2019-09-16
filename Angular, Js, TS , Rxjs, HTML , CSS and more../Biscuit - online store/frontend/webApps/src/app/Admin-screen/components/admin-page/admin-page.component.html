@@ -1,0 +1,7 @@
+<div class="container flex">
+  <h1 class="biscuit-info-card">Activity of users</h1>
+  <input type="text" class="form-control" placeholder="User Name ..." aria-label="Search" (input)="onTextChangedDebounced()"
+    [(ngModel)]="textualSearch">
+  <div *ngIf="displayLodaer" class="biscuit-loader"></div>
+  <ag-grid-angular class="ag-theme-balham biscuit-grid" [rowData]="rowData" [columnDefs]="columnDefs" (gridReady)="onGridReady($event)"></ag-grid-angular>
+</div>

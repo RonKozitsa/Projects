@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Dor's Readme section</h1>
+<p>
+    Store name:<br>
+    Biscuit<br><br>    
+    What are you selling?:<br>
+    I am selling pet accessories in my store, such as bonzo and pet toys.<br><br>
+        
+    What additional page(s) did you add? How to operate them //TODO<br><br>
+        
+    What was hard to do?:<br>
+    I found it hard to understand how to make the connection between Mongo data base and my NodeJS code, Apart from the connection, I found it hard to understand the concept of working with databases with collections and documents which enriches my knowledge a lot.
+    Also, it was very difficult to understand how the all authentication process is working, how to work with cookies properly and understand what tokens are, since there exists so many ways to authenticate a user, it was hard to choose the right package to authenticate with.
+    <br>In addition, to understand how to create the backend code readable and divided into folders and create files that use other files document, was pretty hard.
+    And last thing, I didn't know anything about protection of DDOS  attacks, and it took a while for me to understand how implement it in my code.
+    <br><br>    
+    Who is your partner?  name and id. What did you do? What did your partner do?:<br>
+    My partner is Ron Kozitsa 312544240.<br>
+    I've implemented all the backend of the application, starting from the routes, authentication logic and encryption of password, defended from DDOS attacks and stored our data in the database.
+    <br>Also, implemented all the backend logics (admin, cart, store, checkout screen and general logic).
+    <br>Moreover, I've added error management for each of the cases that prone to make errors.
+    <br>In addition I have added useful middleware's that allow us to work easily and restrict unlogged users from getting into restricted routes.
+    <br>My partner, Ron, Implemented the frontend of the application using Angular, Ron also implemented the tests.
+    <br><br>    
+    Specify all the different route your app supports: //TODO (add more if needed)<br>
+        • /register - allows to transmit the new user's information in the body.<br>
+        • /login - allows to authenticate and returns a cookie to the user if his credentials are valid.<br>
+        • /admin/getallitems - allows the admin to get all existing items in the database<br>
+        • /admin/additem - allows the admin to add an item to the database<br>
+        • /admin/deleteuser/:objectid - allows the admin to delete a specific user<br>
+		• /admin/deleteAllUsers - allows the admin to delete all the users in the database<br>
+        • /admin/filter/bynameandlastname/:name/:lastname - allows the admin to get the user by his name and last name<br>
+        • /admin/filter/byobjectid/:objectid - allows the admin to get the user by his object Id<br>
+        • /cart/getusercart - Allows to get the logged user cart<br>
+        • /cart/additem/:item_id - Allows to add item to the logged user's  cart<br>
+        • /cart/deleteItem/:item_id - Allows to delete item from the logged user's cart<br>
+        • /cart/deleteAllItems - Allows to delete all items from the logged user's cart<br>
+        • /store/search/:searchedText - Allows to search documents in the database by text<br>
+        • /addpurchase/:item_id - Allows to add purchase to the user's purchase array<br>
+        • /setstatusbyid/:status - Allows to set the status of the current user.<br>
+        <br><br>
+    How did you make your store secured?:<br>
+     I've created a middleware that allows only logged users that are registered to enter the api's, by this we have avoided DDOS attacks.
+     <br><br>
+    
+    Did you implement the store using react.js?:<br>
+    No, we have implemented the store using Angular, NodeJS and mongoDB
+
+</p>
+
+</body>
+</html>

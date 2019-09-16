@@ -1,0 +1,40 @@
+<div class="container">
+  <img src="https://avada.theme-fusion.com/veterinarian/wp-content/uploads/sites/80/2016/11/pets_big.png">
+  <h1>BISCUIT</h1>
+  <h4 class="text-muted">GIVE YOUR PETS WHAT THEY DESERVE</h4>
+  <div class="flex">
+    <input type="text" class="form-control" placeholder="Search..." aria-label="Search" (input)="onTextChangedDebounced()" [(ngModel)]="textualSearch">
+    <div *ngIf="displayLodaer" class="biscuit-loader"></div>
+  </div>
+</div>
+<div *ngIf="dataLoaded">
+  <div *ngIf="itemOnCurrentPage.length else emptyTemplate" class="container card">
+    <div class="items">
+      <app-item 
+      class="item"
+      *ngFor="let item of itemOnCurrentPage"
+      [_id]='item._id'
+      [name]= "item.name"
+      [desc] = "item.desc"
+      [productType] = "item.productType"
+      [pictureURL] = "item.pictureURL"
+      [price] = "item.price"
+      [animalType] = "item.animalType"
+      [isInCart]="false"
+      ></app-item>
+    </div>
+    <pagination
+    *ngIf="itemOnCurrentPage.length"
+    class="pagination"
+    [totalItems]="items?.length"
+    [itemsPerPage]="itemsPerPage"
+    [(ngModel)]="currentPage"
+    (pageChanged)="onPageChanged($event.page)"
+    [maxSize]="5"
+    ></pagination>
+  </div>
+</div>
+
+<ng-template #emptyTemplate>
+  <h3 class="no-results">No results found...</h3>
+</ng-template>
