@@ -1,0 +1,1 @@
+export type cardTypes = 'what' | 'when' | 'where';
