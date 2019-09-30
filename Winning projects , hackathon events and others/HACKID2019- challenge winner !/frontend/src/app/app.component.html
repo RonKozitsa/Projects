@@ -1,0 +1,11 @@
+<div>
+<input mdbInput [(ngModel)]='email' type="email" class="form-control" id="inputEmail4" placeholder="Email">
+<input mdbInput [(ngModel)]='phone' class="form-control" id="inputPassword4" placeholder="Phone">
+<input mdbInput [(ngModel)]="description" type="text" class="form-control" id="inputAddress2" placeholder="Description">
+<input mdbInput [(ngModel)]='public_transit' type="text" class="form-control" id="inputZip" placeholder="Public_transit">
+<input mdbInput [(ngModel)]='about' type="text" class="form-control" id="inputZip" placeholder="Tell about your place">
+</div>
+<br>
+<button (click)="goToFacebook()" class="btn btn-primary btn-md">Send data</button>
+<button (click)="talkToServer()">Show comments analytics</button>
+<plotly-example *ngIf="toShowPlot" [graph]='graph'></plotly-example>
