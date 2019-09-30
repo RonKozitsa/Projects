@@ -1,4 +1,4 @@
-Recently updated 18.07.2019 :
+Updated 18.07.2019 :
 
 * Foodies - Hackathon project - an app to help pepole never eat lunch alone again, enter the app and find a partner to eat with !
 * IOT - final course project "MRS" : Milab recommendation system
