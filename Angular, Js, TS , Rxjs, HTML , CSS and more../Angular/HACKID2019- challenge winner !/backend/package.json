@@ -1,0 +1,24 @@
+{
+  "name": "hackidc2019",
+  "version": "1.0.0",
+  "description": "hackathon",
+  "main": "sentiment.js",
+  "scripts": {
+    "test": "npm run test",
+    "start": "node sentiment.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RonKozitsa/Hackathon.git"
+  },
+  "author": "hack_team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RonKozitsa/Hackathon/issues"
+  },
+  "homepage": "https://github.com/RonKozitsa/Hackathon#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}

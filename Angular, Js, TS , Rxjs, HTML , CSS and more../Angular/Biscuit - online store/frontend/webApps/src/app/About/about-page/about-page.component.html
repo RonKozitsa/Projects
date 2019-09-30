@@ -1,0 +1,137 @@
+<div class="container" style="background-color:darkkhaki">
+  <div class="container">
+    <h1>Dor's Readme section</h1>
+    <p>
+      Store name:<br>
+      Biscuit<br><br>
+      What are you selling?:<br>
+      I am selling pet accessories in my store, such as bonzo and pet toys.<br><br>
+
+      <h5>What additional page(s) did you add? How to operate them</h5>
+      <p>We added 2 additional pages: 
+        <b>Contact page</b> and <b>Thank you page</b><br>
+        <b>Contact page: </b> made for customers to be able to contact the store owners for quiestions and message in general.<br>
+        <b>Thank you page: </b> made for a feedback for the customer after their purchase has been made, it includes a funny GIF for them to enjoy while waiting for the transaction to be proccessed.<br>
+</p>
+
+      What was hard to do?:<br>
+      I found it hard to understand how to make the connection between Mongo data base and my NodeJS code, Apart from
+      the connection, I found it hard to understand the concept of working with databases with collections and
+      documents which enriches my knowledge a lot.
+      Also, it was very difficult to understand how the all authentication process is working, how to work with cookies
+      properly and understand what tokens are, since there exists so many ways to authenticate a user, it was hard to
+      choose the right package to authenticate with.
+      <br>In addition, to understand how to create the backend code readable and divided into folders and create files
+      that use other files document, was pretty hard.
+      And last thing, I didn't know anything about protection of DDOS attacks, and it took a while for me to understand
+      how implement it in my code.
+      <br><br>
+      Who is your partner? name and id. What did you do? What did your partner do?:<br>
+      My partner is Ron Kozitsa 312544240.<br>
+      I've implemented all the backend of the application, starting from the routes, authentication logic and
+      encryption of password, defended from DDOS attacks and stored our data in the database.
+      <br>Also, implemented all the backend logics (admin, cart, store, checkout screen and general logic).
+      <br>Moreover, I've added error management for each of the cases that prone to make errors.
+      <br>In addition I have added useful middleware's that allow us to work easily and restrict unlogged users from
+      getting into restricted routes.
+      <br>My partner, Ron, Implemented the frontend of the application using Angular.
+      <br><br>
+      <h5>Specify all the different route your app supports:</h5>
+      • <b>/register</b> - allows to transmit the new user's information in the body.<br>
+      • <b>/login</b> - allows to authenticate and returns a cookie to the user if his credentials are valid.<br>
+      • <b>/logout</b> - allows to logout the user (deletes the cookies).<br>
+      • <b>/admin/getallitems</b> - allows the admin to get all existing items in the database<br>
+      • <b>/admin/getallusers</b> - allows the admin to get all existing users in the database<br>
+      • <b>/admin/additem</b> - allows the admin to add an item to the database<br>
+      • <b>/admin/deleteuser/:objectid</b> - allows the admin to delete a specific user<br>
+      • <b>/admin/deleteAllUsers</b> - allows the admin to delete all the users in the database<br>
+      • <b>/admin/filter/byUserName/:username</b> - allows the admin to get the user by his name and last name<br>
+      • <b>/admin/filter/byobjectid/:objectid</b> - allows the admin to get the user by his object Id<br>
+      • <b>/cart/getusercart</b> - Allows to get the logged user cart<br>
+      • <b>/cart/additem/:item_id</b> - Allows to add item to the logged user's cart<br>
+      • <b>/cart/deleteItem/:item_id</b> - Allows to delete item from the logged user's cart<br>
+      • <b>/cart/deleteAllItems</b> - Allows to delete all items from the logged user's cart<br>
+      • <b>/store/search/:searchedText</b> - Allows to search documents in the database by text<br>
+      • <b>/addpurchase/:item_id</b> - Allows to add purchase to the user's purchase array<br>
+      • <b>/setstatusbyid/:status</b> - Allows to set the status of the current user.<br>
+      <br><br>
+      How did you make your store secured?:<br>
+      I've created a middleware that allows only logged users that are registered to enter the api's, by this we have
+      avoided DDOS attacks.
+      <br><br>
+
+      Did you implement the store using react.js?:<br>
+      No, we have implemented the store using Angular, NodeJS and mongoDB
+  </div>
+</div>
+<div class="container" style="background-color:cornflowerblue">
+  <div class="container">
+      <h1>Ron's Readme section</h1>
+      <p>
+        <h5>Store name:</h5>
+        Biscuit<br>
+        <h5>What are you selling?:</h5>
+        I am selling pet accessories in my store, such as food, bowls and pet toys.<br>
+  
+        <h5>What additional page(s) did you add? How to operate them</h5>
+        <p>We added 2 additional pages: 
+          <b>Contact page</b> and <b>Thank you page</b><br>
+          <b>Contact page: </b> made for customers to be able to contact the store owners for quiestions and message in general.<br>
+          <b>Thank you page: </b> made for a feedback for the customer after their purchase has been made, it includes a funny GIF for them to enjoy while waiting for the transaction to be proccessed.<br>
+
+        </p>
+  
+        <div class="container">
+        <h5>What was hard to do?:</h5>
+        <p>As I was working on the Frontend, for me it was hard to understand how to connect the logics of the frontend with the data from the backend (working with the cookies).
+           I also found it very hard and challenging to create dynamic pages and maintain responsible CSS design as the store kept growing with more pages and more logics inside of it.
+        </p>
+      </div>
+
+      <div class="container">
+        <h5>Who is your partner? name and id. What did you do? What did your partner do?:</h5>
+        <p>My partner is Dor Vaknin.</p>
+        I was responsible for the Frontend, I created from scratch the logic, view and design of the pages, and used many features to have them satisfy the desired behavior. <br>
+        I used guards for preventing the user accessing pages he has no permission to access, I used http Interceptors to make sure the request is sent with the right credentials and used lazy loading for a better performance app.<br>
+       I have learned a lot during the doing of this project and used many known and helpful frameworks and technologies, such as:<br>
+        <ul>
+          <li>Bootstrap 4</li>
+          <li>Ag-Grid</li>
+          <li>NG Bootstrap</li>
+          <li>Ngb Modals</li>
+          <li>Rxjs</li>
+          <li>Lodash</li>
+        </ul>
+        </div>
+        <p>
+            my partner Dor was responsible for implementing the Backend using NodeJs, Dor also implemented the tests.
+        </p>
+        <br><br>
+        <h5>Specify all the different route your app supports:</h5>
+        • <b>/register</b> - allows to transmit the new user's information in the body.<br>
+        • <b>/login</b> - allows to authenticate and returns a cookie to the user if his credentials are valid.<br>
+        • <b>/logout</b> - allows to logout the user (deletes the cookies).<br>
+        • <b>/admin/getallitems</b> - allows the admin to get all existing items in the database<br>
+        • <b>/admin/getallusers</b> - allows the admin to get all existing users in the database<br>
+        • <b>/admin/additem</b> - allows the admin to add an item to the database<br>
+        • <b>/admin/deleteuser/:objectid</b> - allows the admin to delete a specific user<br>
+        • <b>/admin/deleteAllUsers</b> - allows the admin to delete all the users in the database<br>
+        • <b>/admin/filter/byUserName/:username</b> - allows the admin to get the user by his name and last name<br>
+        • <b>/admin/filter/byobjectid/:objectid</b> - allows the admin to get the user by his object Id<br>
+        • <b>/cart/getusercart</b> - Allows to get the logged user cart<br>
+        • <b>/cart/additem/:item_id</b> - Allows to add item to the logged user's cart<br>
+        • <b>/cart/deleteItem/:item_id</b> - Allows to delete item from the logged user's cart<br>
+        • <b>/cart/deleteAllItems</b> - Allows to delete all items from the logged user's cart<br>
+        • <b>/store/search/:searchedText</b> - Allows to search documents in the database by text<br>
+        • <b>/addpurchase/:item_id</b> - Allows to add purchase to the user's purchase array<br>
+        • <b>/setstatusbyid/:status</b> - Allows to set the status of the current user.<br>
+        <br><br>
+        <h5>How did you make your store secured?</h5>
+        we created a middleware that allows only logged users that are registered to enter the api's, by this we have
+        avoided DDOS attacks.
+        <br><br>
+  
+        <h5>Did you implement the store using react.js?</h5>
+        No, we have implemented the store using Angular, NodeJS and mongoDB database
+    </div>
+</div>

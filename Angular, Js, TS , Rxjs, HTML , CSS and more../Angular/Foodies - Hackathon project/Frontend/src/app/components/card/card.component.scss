@@ -1,0 +1,43 @@
+@import '../../scss/variables';
+@import '../../scss/mixin';
+
+
+.foodies-card {
+    height: 45vh;
+    width: 25vw;
+}
+
+.foodies-card-all{
+    margin-top: 15%;
+    display: flex;
+    justify-content: space-between;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: 50% 30%; 
+    border-radius: $border-radius;
+    filter: drop-shadow(16px 16px 20px black);
+}
+
+.foodies-card-what {
+    background-image: url('./icons/burger.svg');
+    @include setBackground(rgb(144, 72, 241));
+}
+.foodies-card-when {
+    background-image: url('./icons/clock.svg');
+    @include setBackground(rgb(73, 206, 237));
+}
+.foodies-card-where {
+    background-image: url('./icons/inNout.svg');
+    @include setBackground(rgb(160, 234, 73));
+}
+
+.foodies-card-title,
+i {
+    text-align: center;
+}
+
+.foodies-card-title {
+    transform: translate(0px, -60%);
+    color: white;
+    font-size: 10vh;
+}

@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Log In</h1>
+  <form #form="ngForm" (ngSubmit)="onLogin()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="name" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+    <div *ngIf="displayLoader && !displayErrorLoginMessage" class="biscuit-loader"></div>
+    <span *ngIf="displayErrorLoginMessage" class="biscuit-alert">Wrong username/password, please try again</span>
+    <div class="buttons-container">
+      <button type="submit" class="btn btn-success" [disabled]="!form.form.valid">Log in</button>
+      <button type="button" class="btn btn-info" (click)="switchToSignUp()">Sign up</button>
+    </div>
+        <span>
+          <label for="remember">Rememeber me</label>
+          <input [checked]="rememberMe" class="rememberMe" type="checkbox" id="remember">
+        </span>
+  </form>
+</div>
+
+

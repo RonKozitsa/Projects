@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.4, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1366 768" style="enable-background:new 0 0 1366 768;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{opacity:6.000000e-02;fill:#FFFFFF;}
+	.st2{fill:#333333;}
+	.st3{opacity:0.79;fill:url(#SVGID_1_);}
+</style>
+<pattern  width="687" height="710" patternUnits="userSpaceOnUse" id="New_Pattern_2" viewBox="37.1 -743.7 687 710" style="overflow:visible;">
+	<g>
+		<rect x="37.1" y="-743.7" class="st0" width="687" height="710"/>
+		<g>
+			<circle class="st1" cx="729.4" cy="-39.8" r="39.8"/>
+			<circle class="st1" cx="627.1" cy="-47.1" r="17.7"/>
+		</g>
+		<g>
+			<circle class="st1" cx="42.4" cy="-39.8" r="39.8"/>
+			<circle class="st1" cx="151.7" cy="-33.4" r="23"/>
+		</g>
+		<g>
+			<circle class="st1" cx="610" cy="-137.7" r="43.1"/>
+			<circle class="st1" cx="718.8" cy="-256.2" r="31.8"/>
+			<circle class="st1" cx="729.4" cy="-394.8" r="39.8"/>
+			<circle class="st1" cx="627.1" cy="-402.1" r="17.7"/>
+			<circle class="st1" cx="583.8" cy="-301.9" r="31.3"/>
+		</g>
+		<g>
+			<circle class="st1" cx="375.3" cy="-78.7" r="31.8"/>
+			<circle class="st1" cx="385.9" cy="-217.3" r="39.8"/>
+			<circle class="st1" cx="495.2" cy="-210.9" r="23"/>
+			<circle class="st1" cx="283.6" cy="-224.6" r="17.7"/>
+			<circle class="st1" cx="517.8" cy="-122.1" r="29"/>
+			<circle class="st1" cx="240.3" cy="-124.4" r="31.3"/>
+		</g>
+		<g>
+			<circle class="st1" cx="31.8" cy="-256.2" r="31.8"/>
+			<circle class="st1" cx="209.3" cy="-190.5" r="12.7"/>
+			<circle class="st1" cx="122" cy="-145.1" r="45.5"/>
+			<circle class="st1" cx="42.4" cy="-394.8" r="39.8"/>
+			<circle class="st1" cx="151.7" cy="-388.4" r="23"/>
+			<circle class="st1" cx="174.3" cy="-299.6" r="29"/>
+		</g>
+		<g>
+			<circle class="st1" cx="610" cy="-492.7" r="43.1"/>
+			<circle class="st1" cx="718.8" cy="-611.2" r="31.8"/>
+			<circle class="st1" cx="729.4" cy="-749.8" r="39.8"/>
+			<circle class="st1" cx="627.1" cy="-757.1" r="17.7"/>
+			<circle class="st1" cx="583.8" cy="-656.9" r="31.3"/>
+		</g>
+		<g>
+			<circle class="st1" cx="266.5" cy="-315.2" r="43.1"/>
+			<circle class="st1" cx="375.3" cy="-433.7" r="31.8"/>
+			<circle class="st1" cx="552.8" cy="-368" r="12.7"/>
+			<circle class="st1" cx="465.5" cy="-322.6" r="45.5"/>
+			<circle class="st1" cx="385.9" cy="-572.3" r="39.8"/>
+			<circle class="st1" cx="495.2" cy="-565.9" r="23"/>
+			<circle class="st1" cx="283.6" cy="-579.6" r="17.7"/>
+			<circle class="st1" cx="517.8" cy="-477.1" r="29"/>
+			<circle class="st1" cx="240.3" cy="-479.4" r="31.3"/>
+		</g>
+		<g>
+			<circle class="st1" cx="31.8" cy="-611.2" r="31.8"/>
+			<circle class="st1" cx="209.3" cy="-545.5" r="12.7"/>
+			<circle class="st1" cx="122" cy="-500.1" r="45.5"/>
+			<circle class="st1" cx="42.4" cy="-749.8" r="39.8"/>
+			<circle class="st1" cx="151.7" cy="-743.4" r="23"/>
+			<circle class="st1" cx="174.3" cy="-654.6" r="29"/>
+		</g>
+		<g>
+			<circle class="st1" cx="266.5" cy="-670.2" r="43.1"/>
+			<circle class="st1" cx="552.8" cy="-723" r="12.7"/>
+			<circle class="st1" cx="465.5" cy="-677.6" r="45.5"/>
+		</g>
+	</g>
+</pattern>
+<g>
+	<rect x="-15" y="-12" class="st2" width="1400" height="791"/>
+</g>
+<pattern  id="SVGID_1_" xlink:href="#New_Pattern_2" patternTransform="matrix(0.9676 0 0 0.9676 23.3269 13.249)">
+</pattern>
+<rect x="-4" y="0.6" class="st3" width="1375" height="768.9"/>
+</svg>

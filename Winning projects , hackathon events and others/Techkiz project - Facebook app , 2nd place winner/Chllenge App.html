@@ -1,0 +1,302 @@
+<html>
+<head>
+<style>
+.container {
+    position: absolute;
+    top: 10px;
+    right: 270px;
+    font-size: 18px
+}
+.container2 {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 18px
+}
+
+.link {
+    position: absolute;
+    top: 550px;
+    right: 560px;
+    font-size: 18px
+}
+</style>
+</br>
+<h3 style="font-size:200%;text-align:center;font-family:verdana;"> Welcome to Cambridge Analytica!</h3>
+<p style="text-align:center;font-family:verdana;"> You are about to find out what was your best day on facebook!</br>
+<p style="text-align:center;font-family:verdana;">The calculation is based on:</p>
+<p style="text-align:center;font-family:verdana;"># The number of posts in each day</p>
+<p style="text-align:center;font-family:verdana;"># Likes and reactions you got on each such post	 </p> 
+<p style="text-align:center;font-family:verdana;"># Number of comments you got on your posts </p>
+<p style="text-align:center;font-family:verdana;"># How was your birthday on facebook </li>
+</p>
+<div class="container">
+<img hspace="700" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsGRH3p_9CSmKaWg0S5WVUP525GCjm6qLRxSw_ESYz4Q5-HxpbMQ" width="300" height="180">
+</div>
+<div class="container2">
+</br>
+<img align="right" src="https://i.imgur.com/Z2Md5pZ.jpg" width="300" height="100">  
+</div>
+</br>
+<p style="font-size:125%;text-align:center;font-family:verdana;">Ready to find out? Press the button below! </p> </br>
+</p>
+<div class="link"></div>
+
+
+
+
+</head>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '212733636066119',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v3.1'
+    });
+      
+    FB.AppEvents.logPageView();   
+
+    	FB.getLoginStatus(function(response) {
+   		 statusChangeCallback(response);
+		});
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+
+
+function statusChangeCallback (response) {
+	console.info(response);
+}
+
+
+var birthday;
+
+//gets users birthday
+function checkLoginState1() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+        FB.api(
+          '/me',
+          'GET',
+          {"fields":"birthday"},
+		  
+		  function(response) {
+          	birthday = response.birthday;
+			editBirthday(birthday);
+          }
+        );
+      });
+		checkLoginState();
+    }
+	
+	function editBirthday(date){
+	var year = date.substring(6);
+	var month = date.substring(3,5); 
+	var day = date.substring(0,2);
+	birthday = "" + year + "-" + month + "-" + day;	
+	}
+		  
+
+function checkLoginState() {
+      FB.getLoginStatus(function(response) {
+        statusChangeCallback(response);
+        FB.api(
+          '/me/posts',
+          'GET',
+          {"fields":"likes.summary(true),message,created_time, comments.summary(true),reactions.type(SAD).summary(true),permalink_url"},
+		  
+		  //gets user's facebook data
+          function(response) {
+          	var calender = inItArray();
+              for (var i in response.data) {
+                  var post = response.data[i];
+                  var likes = post.likes.summary.total_count;
+                  var comments = post.comments.summary.total_count;
+				  //var badReactions = post.reactions.type(SAD).summary(total_count);
+				  var goodReactions = post.reactions.summary.total_count;
+                  var time = post.created_time.slice(0,10);
+				  var message = post.message;
+				  var url = post.permalink_url;
+				  
+
+                  j = 0;
+                  while (calender[j] && (!(time === calender[j].Date))){
+                  	j++;
+                  }
+                  if (calender[j]){
+						calender[j].postContent = message;
+                  		calender[j].posts++;
+                  		calender[j].comments = calender[j].comments + comments;
+                  		calender[j].likes = calender[j].likes + likes;
+						calender[j].reactions = calender[j].reactions + goodReactions;
+						calender[j].url = url;
+                  	
+                  }
+              
+              }
+			
+              calender = score(calender);
+			  var bestDay = getBestDay(calender);
+			  var numOfPosts = getInfo(calender,bestDay , "posts");
+			  var messageOfPost = getInfo(calender,bestDay , "content");
+			  var post_url = getInfo(calender,bestDay , "url");
+			  addLink(post_url);
+              alert("your best day is :\n" + bestDay + "\n you posted : " + numOfPosts + " posts\n and wrote : " + messageOfPost + "\n check it out in the link below ! \n");
+			  console.log(calender);
+          }
+        );
+      });
+    }
+
+	//get info from the best day
+	function getInfo(calender , day , choice){
+	var i = 0;
+	while (calender[i].Date !== day){
+	i++;
+	}
+		if(choice == "posts"){
+			return calender[i].posts;
+		}
+		else if (choice == "content"){
+			return calender[i].postContent;
+		}
+		else{
+		return calender[i].url;
+	}
+}
+	
+	//create a link to the post
+	function addLink(url){
+	var c = document.getElementsByClassName('link');
+	var a = document.createElement('a');
+	var linkText = document.createTextNode("Check your best day!");
+	a.appendChild(linkText);
+	a.title = "my post";
+	a.href = url.toString();
+	c[0].appendChild(a);
+	document.body.appendChild(c[0]);
+	}
+
+
+
+//initialize array of dates from facebook's creation till today
+function inItArray(){
+
+var today = new Date();
+var day = 4;
+var month = 2;
+var year = 2004;
+var calender = [];
+var j = 0;
+
+//initialize the array
+while (!(today.getFullYear() === year && today.getMonth() === month && today.getDate() === day)) {
+	var date = "" + year + "-" + month + "-" + day;
+	date = makeDate(date);
+	
+	
+	//addapts birthday date for comparrison
+	if(month.toString().length == 1) {
+	month = "0" + month;
+	}
+	
+	if(day.toString().length == 1){
+	day = "0" + day;
+	}
+	
+	
+	//checks if that day is a birthday
+	if((month + "-" + day) === birthday.substring(5)){
+	calender.push({"Date": date, "likes": 0, "posts": 0, "comments": 0,"reactions" : 0, "postContent" : "","hasBirthday" : 1 , "url" : ""});
+	}else{
+	calender.push({"Date": date, "likes": 0, "posts": 0, "comments": 0,"reactions" : 0,"postContent" : "","hasBirthday" : 0, "url" : ""});
+	}
+	
+	day = parseInt(day);
+	month = parseInt(month);
+	j++;
+	day++;
+	if (day > 31) {
+		day = 1;
+		month++;
+		if (month > 12) {
+			month = 1;
+			year++;
+		}
+	}
+}
+
+return calender;
+}
+
+//adds zeroes before single numbers in dates
+function makeDate(str){
+	var newStr = str;
+	if(str.length !== 10){
+        if (str.length < 9)
+            newStr = str.replace(/-/g, "-0");
+        else if (str.length < 10) {
+        if (!(str.charAt(7)==="-")) {
+            newStr = str.replace("-", "-0");
+        } else {
+            var letter = str.charAt(str.length - 1);
+            newStr = str.substr(0, str.length - 1);
+            newStr = newStr + "0" + letter;
+        }
+        }
+	}
+        return newStr;
+    }
+	
+	
+	
+
+	//add scores to each day
+    function score(calender){
+    	var j = 0;
+		var currentDay;
+	while (calender[j]){
+			currentDay = calender[j];
+			currentDay.score = 3 * currentDay.posts + 5*currentDay.comments + currentDay.reactions*2 + currentDay.hasBirthday*30 +currentDay.likes *2 ; 
+            j++;
+        }
+        return calender;
+    }
+
+
+	
+	//finds the best day
+    function getBestDay(calender){
+    	var best = calender[0];
+    	var j = 1;
+		var currentDay;
+	while (calender[j]){
+			currentDay = calender[j];
+			if (currentDay.score > best.score) {
+				best = currentDay;
+			}
+            j++;
+        }
+        return best.Date;
+    }
+
+</script>
+
+<body style=" background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFrVe6p-wsd1WVgqZk33iXe-6frxl-W40Zh8EZQnVc4yFxZp3vsw')">
+<p style="text-align:center;font-family:verdana;">
+<input type="checkbox" id="checkbox" value="changed" > Remember me
+    </p>
+<p align="center">
+<input type="button"  value="Find out!" onclick="checkLoginState1()">
+</p>
+</body>
+</html

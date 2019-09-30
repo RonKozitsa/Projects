@@ -1,0 +1,39 @@
+.flex {
+  justify-content: space-evenly;
+}
+
+.cart-header{
+  left: 25%;
+  width: 50%
+}
+
+.biscuit-card-cart {
+  margin-top: 100px;
+}
+
+.biscuit-card {
+  position: static;
+  text-align: center;
+  width: 100px;
+  height: 200px;
+}
+
+.flex-last{
+  align-self: flex-end;
+}
+.empty-cart {
+  margin-top: 10%;
+  border: 1px solid black;
+  margin-right: 25%;
+  margin-left: 25%;
+  padding: 50px;
+}
+
+.btn-checkout {
+  margin: 0 20px;
+}
+
+.buttons {
+  justify-content: center;
+  margin: 60px 0;
+}
