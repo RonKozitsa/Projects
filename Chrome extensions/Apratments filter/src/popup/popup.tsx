@@ -72,9 +72,9 @@ const render = () =>{
                     <button onClick={resetList}>Reset List</button>
                 </>
             );
+            setNumberOfHiddenApartments();
         }
     });
 }
 
-setNumberOfHiddenApartments();
 render();
