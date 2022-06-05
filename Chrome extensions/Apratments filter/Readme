@@ -1,0 +1,5 @@
+While looking for apartments, there where many times I saw apartment that I knew don't fit, cause they don't accept pets and I have a dog.
+When I got back the day after and looked for apartments, I still saw the ones I know are irrelevant to me, but I couldn't rememeber which ones they where,
+so I had to check them all again and call the landlord just to hear again they are not pet friendly, which made mewaste time and frustrated.
+So I developed this extension, that once I mark an apartment as not suitable to me, it will be filtered out next time I look for apartments.
+The filter can be reset any time to rewatch those apartments, and it is currently supporting only 2 sites - OnTheMarket and RightMove.
