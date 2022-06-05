@@ -43,7 +43,7 @@ const setNumberOfHiddenApartments = () => {
         const url = tabs[0].url;
         const currentSite = url.includes(Websites.onTheMarket) ? Websites.onTheMarket : Websites.rightMove;
         chrome.storage.sync.get(currentSite, (blockList) => {
-            numberOfHiddenApartments = blockList[currentSite]?.length;
+            numberOfHiddenApartments = blockList[currentSite]?.length || 0;
             updateHiddenCount();
         })
     });
@@ -53,7 +53,7 @@ const updateHiddenCount = () => {
     document.getElementById('hidden-count').innerText = numberOfHiddenApartments;
 }
 
-const render = () =>{
+const render = () => {
     chrome.tabs.query({active: true, currentWindow: true}, tabs => {
         const url = tabs[0].url;
         if (!(url.includes(Websites.onTheMarket) || url.includes(Websites.rightMove))) {
@@ -64,10 +64,12 @@ const render = () =>{
             );
         } else {
             const currentSite = url.includes(Websites.onTheMarket) ? Websites.onTheMarket : Websites.rightMove;
+            const isInDetailsPage = currentSite === Websites.onTheMarket && url.includes('details')
+                || currentSite === Websites.rightMove && url.includes('properties');
             root.render(
                 <>
                     <span>Apartments Filter - {currentSite}</span>
-                    <button onClick={removeApartment}>Dont show this apartment again</button>
+                    {isInDetailsPage && <button onClick={removeApartment}>Dont show this apartment again</button>}
                     <div>Hidden apartments : <span id="hidden-count">{numberOfHiddenApartments}</span></div>
                     <button onClick={resetList}>Reset List</button>
                 </>
