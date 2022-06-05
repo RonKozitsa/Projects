@@ -1,0 +1,15 @@
+<div class="app-input">
+    <label [for]="label">
+        <ng-content></ng-content>
+    </label>
+    <input
+        type="text"
+        name="text"
+        class="app-input-text"
+        [id]="label"
+        [(ngModel)]="value"
+        [ngClass]="{'invalid' : showError}"
+        (blur)="onTouch()"
+        (input)="onChange($event.target.value)"
+    />
+</div>

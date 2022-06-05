@@ -1,0 +1,203 @@
+@use 'mixins';
+
+/* Large devices (laptops/desktops) and below */
+@media screen and (max-width: 1200px) {
+  .online-shop-page-content .shopping-page-content-wrapper .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+/* Medium devices (landscape tablets) and below */
+@media screen and (max-width: 992px) {
+  // 993 was chosen instead of 1000 to fit NGBootstrap media query for thr modal
+  .modal-dialog .modal-content .modal-body.expanded-view-item {
+    overflow: auto;
+    flex-direction: column;
+
+    .paintings {
+      width: 100%;
+      height: 50%;
+      background-image: revert;
+    }
+
+    .item-info-container {
+      align-items: flex-start;
+      width: 100%;
+    }
+
+    .item-info-section {
+      &-description {
+        max-height: revert !important;
+      }
+    }
+
+    .modal-bottom {
+      padding-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 993px), screen and (max-height: 600px) {
+  .page-content {
+    overflow: auto;
+
+    .home-page {
+      height: revert !important;
+      padding: 20px;
+
+      .quotes {
+        min-height: 150px;
+        text-align: center;
+        padding: 20px;
+        border-top: 1px solid var(--app-border);
+        margin-top: 20px;
+        height: revert !important;
+        padding-bottom: revert !important;
+      }
+
+      .home-page-info {
+        flex-direction: column;
+        width: 100%;
+        margin: revert !important;
+        padding-top: 0 !important;
+
+        &-description {
+          align-items: center;
+          padding: 10px;
+          text-align: center;
+          max-width: revert !important;
+        }
+
+        &-picture {
+          padding: 20px;
+          margin-right: 0 !important;
+        }
+
+        .go-to-collection-button {
+          padding-top: 20px;
+        }
+      }
+    }
+
+    .about-me {
+      flex-direction: column-reverse;
+      padding: 15px;
+      overflow: auto;
+      height: revert !important;
+
+      .carousel {
+        height: 400px;
+        margin-right: revert !important;
+        max-height: revert !important;
+        width: 100% !important;
+        padding: 0 !important;
+      }
+    }
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 600px) {
+  .website-wrapper .app-navigation-top .navigation .navigation-item {
+    margin-right: 20px;
+  }
+
+  .more-details-button {
+    font-size: 14px !important;
+  }
+
+  .wide-screen-only {
+    display: none !important;
+  }
+
+  .small-screen-only {
+    display: revert !important;
+  }
+
+  .website-wrapper {
+    .menu-icon {
+      display: flex !important;
+      border-bottom-style: none !important;
+    }
+
+    .page-content {
+      height: revert !important;
+
+      .contact-page {
+        height: revert;
+        padding: 20px;
+
+        .contact-page-title {
+          padding: 20px 0;
+        }
+
+        .contact-page-form {
+          width: 100%;
+        }
+      }
+    }
+
+    .app-navigation-side .header-content {
+      @include mixins.flex(true);
+      z-index: 99;
+      justify-content: flex-start;
+      position: absolute;
+      height: 100vh;
+      width: 250px;
+      background-image: linear-gradient(to top left, var(--background-secondary), var(--color-on-primary), var(--background));
+
+      .logo {
+        padding: 10px 0;
+        width: revert !important;
+        margin-left: revert !important;
+        padding-left: revert !important;
+      }
+
+      .theme-controller {
+        padding-right: revert !important;
+      }
+
+      .navigation-wrapper {
+        justify-content: center;
+        flex-direction: column;
+        border-bottom: unset;
+        min-width: revert;
+
+        .navigation-item {
+          margin: 0 0 10px;
+        }
+      }
+
+      .social-media {
+        height: 150px !important;
+        margin: 30px 0 0 0 !important;
+
+        &-contact-wrapper {
+          flex-direction: column;
+
+          .social-media-logo {
+            margin: 0 0 20px;
+          }
+        }
+      }
+    }
+
+    app-online-shop-home {
+      height: calc(100% - var(--small-screen-navigation-height)) !important;
+
+      .online-shop-page-wrapper {
+        .online-shop-page-content {
+          padding: 0 !important;
+        }
+
+        .shopping-content .shop-side-menu .menu-wrapper {
+          border-right-style: none;
+        }
+      }
+    }
+
+    .grid-container {
+      grid-template-columns: 200px !important;
+    }
+  }
+}

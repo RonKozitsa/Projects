@@ -1,0 +1,48 @@
+<div class="modal-header">
+    <h4 class="modal-title">{{ itemConfig.name }}</h4>
+    <app-button class="close-modal-btn" (clicked)="activeModal.dismiss()" [buttonType]="buttonType.icon">X</app-button>
+</div>
+<div class="modal-body expanded-view-item">
+    <app-display-paintings
+        #paintings
+        class="paintings"
+        [itemConfig]="itemConfig"
+        [frameColor]="frameColor"
+    ></app-display-paintings>
+    <div class="item-info-container">
+        <div class="item-info-section">
+            <h4 class="item-info-section-title">Description:</h4>
+            <p class="item-info-section-description">{{ itemConfig.description }}</p>
+        </div>
+        <div class="item-info-section">
+            <h4 class="item-info-section-title">Information:</h4>
+            <div class="item-info-section-content">
+                <span class="key">Dimensions:</span>
+                <span class="value">{{ itemConfig.framed }}</span>
+                <span class="key">Year:</span>
+                <span class="value">{{itemConfig.year}}</span>
+                <span class="key">Framed:</span>
+                <span class="value">{{ itemConfig.framed ? 'Yes' : 'No' }}</span>
+            </div>
+        </div>
+        <div class="modal-bottom">
+            <div *ngIf="!itemConfig.framed" class="item-color-picker">
+                <div class="item-color-picker-button">
+                    <input #colorPicker hidden id="color-picker" [colorPicker]="frameColor"
+                           (colorPickerChange)="onFrameColorPicked($event)"/>
+                    <app-button [buttonType]="buttonType.square" (clicked)="openColorPicker()">Attach a frame
+                    </app-button>
+                </div>
+                <app-button
+                    *ngIf="frameColor"
+                    [buttonType]="buttonType.icon"
+                    (clicked)="onFrameColorPicked(undefined)">
+                    X
+                </app-button>
+            </div>
+            <app-button class="want-it-btn" [buttonType]="buttonType.square" (clicked)="navigateToContact(itemConfig)">
+                I want it !
+            </app-button>
+        </div>
+    </div>
+</div>

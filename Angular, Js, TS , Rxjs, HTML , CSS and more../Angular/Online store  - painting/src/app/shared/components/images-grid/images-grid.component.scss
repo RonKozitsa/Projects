@@ -1,0 +1,21 @@
+@use 'mixins';
+
+:host {
+  display: block;
+  overflow: auto;
+}
+
+.grid-container {
+  @include mixins.width-height-100();
+  display: grid;
+  grid-gap: 50px;
+  padding: 40px;
+  grid-template-columns: repeat(3, 1fr);
+
+  .grid-item {
+    text-align: center;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    background-image: linear-gradient(to bottom right, var(--background), transparent, var(--color-on-primary));
+  }
+}

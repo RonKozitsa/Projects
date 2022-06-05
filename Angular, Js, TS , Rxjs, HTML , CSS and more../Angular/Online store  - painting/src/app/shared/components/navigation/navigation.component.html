@@ -1,0 +1,5 @@
+<div class="navigation-wrapper">
+  <a *ngFor="let navigationItem of navigationMenu" class="navigation-item" routerLinkActive="active" [routerLink]="navigationItem.url" (click)="navigationClicked.emit()">
+    {{ navigationItem.name }}
+  </a>
+</div>

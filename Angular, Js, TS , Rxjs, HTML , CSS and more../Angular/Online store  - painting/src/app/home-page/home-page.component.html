@@ -1,0 +1,20 @@
+<main class="home-page">
+  <div class="home-page-info">
+    <img class="home-page-info-picture" src="assets/pictures/hands-painting.jpeg" />
+    <div class="home-page-info-description">
+      <p>
+        Creativity was always a big part of my life, ever since I can remember, it’s in my genes and a part of who I am.<br />
+        I have always looked at the world as a place full of colors and opportunities, even in my mind, I often wander to another world full of different colors and whatnot.<br />
+        One day when I was 15 years old, my mom brought home some painting equipment, and when I saw all these colors, a deep desire that I had pushed away for many years rose and all I wanted was to try out all the different colors.<br />
+        Since that day I haven’t stopped painting.
+      </p>
+      <app-button class="go-to-collection-button" [buttonType]="buttonType.square" routerLink="/{{ mainPagesNavigationNamesEnums.collection }}">View My Collection </app-button>
+    </div>
+  </div>
+  <div class="quotes">
+    <ng-container *ngIf="!loadingQuote">
+      <p @fadeInOut>"{{ currentQuote.quote }}"</p>
+      <span @fadeInOut>- {{ currentQuote.artist }}</span>
+    </ng-container>
+  </div>
+</main>

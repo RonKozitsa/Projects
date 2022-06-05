@@ -1,0 +1,24 @@
+@use 'mixins';
+
+.navigation-wrapper {
+  @include mixins.flex();
+  align-items: center;
+  height: 100%;
+  border-bottom: unset;
+  min-width: 300px;
+}
+
+.navigation-item {
+  flex-grow: 1;
+  opacity: 1;
+  cursor: pointer;
+  text-align: center;
+  min-width: unset;
+  padding: 0;
+  white-space: nowrap;
+  font-size: 20px;
+
+  &:not(:last-of-type) {
+    margin-right: 50px;
+  }
+}

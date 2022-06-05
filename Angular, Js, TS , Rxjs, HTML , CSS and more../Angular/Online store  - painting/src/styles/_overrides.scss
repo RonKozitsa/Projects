@@ -1,0 +1,53 @@
+@use 'mixins';
+
+.modal-open .modal {
+  z-index: 9999;
+}
+
+.modal-content {
+  background-image: linear-gradient(to top left, var(--background-secondary), var(--color-on-primary), var(--background));
+  border: 1px solid var(--app-border);
+
+  .close-modal-btn button {
+    background-color: transparent;
+    padding: 0 10px;
+  }
+}
+
+.carousel {
+  height: 100%;
+
+  &-inner,
+  &-item {
+    height: 100%;
+  }
+
+  &-img {
+    @include mixins.width-height-100();
+  }
+
+  .carousel-indicators {
+    margin-bottom: 0;
+  }
+}
+
+app-item-expanded-view .modal-body {
+  padding: 0;
+}
+
+.theme-controller button {
+  background-color: transparent;
+}
+
+.color-picker {
+  bottom: 30px;
+  top: revert !important;
+  position: absolute !important;
+  left: 0 !important;
+  background-color: var(--background) !important;
+
+  .box div {
+    color: var(--color-primary) !important;
+  }
+}
+

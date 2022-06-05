@@ -1,0 +1,8 @@
+<div class="header-content">
+    <div class="logo-container">
+        <img routerLink="/home" class="logo" src="/assets/logo/logo.svg"/>
+    </div>
+    <app-navigation class="navigation" [navigationMenu]="navigationMenu" (navigationClicked)="navigationClicked.emit()"></app-navigation>
+    <app-social-media-contact class="social-media"></app-social-media-contact>
+    <app-theme-controller class="theme-controller"></app-theme-controller>
+</div>

@@ -1,0 +1,19 @@
+@use 'dark-theme-variables';
+@use 'variables';
+
+:root .dark-theme {
+  --navigation-height: #{variables.$navigation-height}px;
+  --small-screen-navigation-height: #{variables.$small-screen-navigation-height}px;
+  --logo-width: #{variables.$logo-width}px;
+  --app-error: #{variables.$app-error-color};
+  --color-primary: #{dark-theme-variables.$color-primary};
+  --color-on-primary: #{dark-theme-variables.$color-on-primary};
+  --app-black: #{variables.$app-black};
+  --app-border: #{dark-theme-variables.$app-border};
+  --app-dark-gray: #{dark-theme-variables.$app-dark-gray};
+  --app-light-gray: #{dark-theme-variables.$app-light-gray};
+  --link-color: #{dark-theme-variables.$link-color};
+  --background: #{dark-theme-variables.$color-background};
+  --background-secondary: #{dark-theme-variables.$color-background-secondary};
+  --background-secondary-rgb: #{dark-theme-variables.$color-background-secondary-rgb};
+}

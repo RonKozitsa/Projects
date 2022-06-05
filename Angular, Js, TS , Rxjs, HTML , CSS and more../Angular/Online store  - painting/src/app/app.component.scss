@@ -1,0 +1,29 @@
+@use 'mixins';
+
+.website-wrapper {
+  @include mixins.flex(true);
+  @include mixins.width-height-100();
+
+  .page-content {
+    height: calc(100% - var(--navigation-height));
+  }
+
+  .app-navigation-top {
+    display: block;
+    background-image: linear-gradient(to bottom right, var(--color-on-primary) 10%, transparent 50%);
+    border-bottom: 1px solid var(--app-border);
+  }
+
+  .menu-icon {
+    display: none;
+    align-items: center;
+    justify-content: flex-start;
+    height: var(--small-screen-navigation-height);
+    border-bottom: 1px solid gray;
+    width: 100%;
+
+    img {
+      height: 40px;
+    }
+  }
+}

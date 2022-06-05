@@ -1,0 +1,16 @@
+@use 'mixins';
+
+:host {
+  @include mixins.width-height-100();
+  @include mixins.flex($center: true);
+}
+
+.store-image {
+  @include mixins.width-height-max-100();
+  object-fit: contain;
+
+  &.frame {
+    border-width: 15px;
+    border-style: ridge ridge groove groove;
+  }
+}

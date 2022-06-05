@@ -1,0 +1,3 @@
+<div class="social-media-contact-wrapper">
+  <img *ngFor="let socialMediaConfig of configurations" class="social-media-logo" src="assets/svg/{{ socialMediaConfig.logo }}" (click)="navigateToSocialMediaPage(socialMediaConfig.url)" />
+</div>

@@ -1,0 +1,13 @@
+@use 'mixins';
+
+.app-input {
+  @include mixins.flex(true);
+
+  &-text {
+    border: 1px solid var(--app-border);
+
+    &.invalid {
+      border-color: var(--app-error);
+    }
+  }
+}

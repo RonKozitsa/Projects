@@ -1,0 +1,19 @@
+@use 'light-theme-variables';
+@use 'variables';
+
+:root .light-theme {
+  --navigation-height: #{variables.$navigation-height}px;
+  --small-screen-navigation-height: #{variables.$small-screen-navigation-height}px;
+  --logo-width: #{variables.$logo-width}px;
+  --app-black: #{variables.$app-black};
+  --app-error: #{variables.$app-error-color};
+  --color-primary: #{light-theme-variables.$color-primary};
+  --color-on-primary: #{light-theme-variables.$color-on-primary};
+  --app-border: #{light-theme-variables.$app-border};
+  --app-dark-gray: #{light-theme-variables.$app-dark-gray};
+  --app-light-gray: #{light-theme-variables.$app-light-gray};
+  --link-color: #{light-theme-variables.$link-color};
+  --background: #{light-theme-variables.$color-background};
+  --background-secondary: #{light-theme-variables.$color-background-secondary};
+  --background-secondary-rgb: #{light-theme-variables.$color-background-secondary-rgb};
+}

@@ -1,0 +1,5 @@
+<div class="store-item-wrapper">
+  <h6 class="store-item-name">{{ itemConfig.name }}</h6>
+  <app-display-paintings class="paintings" [itemConfig]="itemConfig"></app-display-paintings>
+  <app-button class="more-details-button" (clicked)="showDetails()">More details</app-button>
+</div>

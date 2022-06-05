@@ -1,0 +1,23 @@
+<main class="contact-page">
+  <ng-container *ngIf="!formSubmitted; else submitted">
+    <h3 class="contact-page-title">Contact Me !</h3>
+    <form class="contact-page-form" [formGroup]="contactForm">
+      <input type="text" name="_honey" style="display: none" />
+      <!-- honeypot to avoid bots -->
+      <div class="sender-info">
+        <app-input-text class="form-name" label="name" [formControlName]="ContactPageFormControls.name">Name </app-input-text>
+        <app-input-text class="form-email" label="email" [formControlName]="ContactPageFormControls.email">Email </app-input-text>
+      </div>
+      <div class="sender-message">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" class="form-message" [formControlName]="ContactPageFormControls.message"></textarea>
+      </div>
+      <input hidden name="id" [value]="chosenPaintingId" />
+    </form>
+    <app-button [buttonType]="buttonType.square" [disabled]="!contactForm.valid" (clicked)="submitForm()">Send </app-button>
+  </ng-container>
+  <ng-template #submitted>
+    <h2 class="contact-page-title">Thank You !</h2>
+    <h5>We will be in touch soon</h5>
+  </ng-template>
+</main>

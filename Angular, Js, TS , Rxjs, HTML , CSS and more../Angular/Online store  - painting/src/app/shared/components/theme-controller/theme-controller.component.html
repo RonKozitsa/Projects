@@ -1,0 +1,3 @@
+<app-button [buttonType]="buttonType" (clicked)="themeService.toggleTheme()">
+  <img class="theme-toggle-img" alt="theme change" role="button" src="/assets/svg/{{ themeService.getOppositeTheme() }}.svg" />
+</app-button>

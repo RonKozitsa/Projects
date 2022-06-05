@@ -1,0 +1,32 @@
+@use 'mixins';
+
+.store-item-wrapper {
+  @include mixins.flex(true);
+  height: 100%;
+  padding: 5px 5px 0 5px;
+  box-sizing: content-box;
+
+  .store-item-name {
+    @include mixins.flex($center: true);
+    margin: 0;
+    white-space: pre;
+    padding-bottom: 5px;
+    height: 10%;
+    font-weight: bold;
+  }
+
+  .paintings {
+    height: 75%;
+  }
+
+  .pricing-section,
+  .description-section {
+    margin-top: auto;
+  }
+
+  .more-details-button {
+    @include mixins.flex($center: true);
+    height: 15%;
+    padding: 5px 0;
+  }
+}

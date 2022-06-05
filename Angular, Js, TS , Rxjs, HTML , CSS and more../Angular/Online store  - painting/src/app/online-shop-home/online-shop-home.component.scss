@@ -1,0 +1,26 @@
+@use 'mixins';
+@use 'variables';
+
+:host {
+  height: 100%;
+}
+
+.online-shop-page-wrapper {
+  height: 100%;
+  position: relative;
+
+  .shopping-content {
+    @include mixins.flex();
+    height: 100%;
+  }
+
+  .shop-side-menu {
+    flex-basis: variables.$side-menu-width;
+    height: 100%;
+  }
+
+  .online-shop-page-content {
+    flex-basis: 85%;
+    padding: 10px;
+  }
+}

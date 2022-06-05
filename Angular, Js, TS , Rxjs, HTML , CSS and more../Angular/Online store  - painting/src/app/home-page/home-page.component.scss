@@ -1,0 +1,43 @@
+@use 'mixins';
+
+:host {
+  flex-grow: 1;
+}
+
+.home-page {
+  @include mixins.flex(true, true);
+  height: 100%;
+  font-size: 18px;
+
+  .home-page-info {
+    @include mixins.flex();
+    align-items: center;
+    margin: auto 0;
+    padding-top: 100px;
+
+    &-description {
+      @include mixins.flex(true);
+      max-width: 400px;
+      height: 100%;
+
+      > p {
+        margin-bottom: auto;
+      }
+    }
+
+    &-picture {
+      height: 400px;
+      margin-right: 100px;
+    }
+  }
+
+  .quotes {
+    @include mixins.flex(true);
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    padding-bottom: 100px;
+    padding-top: 20px;
+    font-family: fantasy;
+  }
+}

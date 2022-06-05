@@ -1,0 +1,38 @@
+@use 'mixins';
+
+%button-common {
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 0 0 10px 0 var(--app-border);
+  }
+}
+
+.app-button {
+  &[disabled] {
+    opacity: 0.5;
+  }
+
+  &.standard:not([disabled]) {
+    @extend %button-common;
+    border-radius: 50px;
+  }
+
+  &.square:not([disabled]) {
+    @extend %button-common;
+  }
+
+  &.text {
+    background-color: transparent;
+    padding: 0;
+    color: var(--link-color);
+  }
+
+  &.icon {
+    @include mixins.flex($center: true);
+    @include mixins.width-height-100();
+    background-color: transparent;
+    padding: 0;
+  }
+}

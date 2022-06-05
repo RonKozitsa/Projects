@@ -1,0 +1,10 @@
+<div class="menu-wrapper">
+  <h5 class="menu-title">Category Selection</h5>
+  <menu class="menu-items">
+    <div *ngFor="let item of sideMenuItems" class="menu-item" role="menu-item">
+      <a routerLinkActive="active" [routerLink]="item.url">
+        {{ item.name }}
+      </a>
+    </div>
+  </menu>
+</div>

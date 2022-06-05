@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+@use 'themes';
+@use 'mixins';
+@use 'media-queries';
+@use 'overrides';
+@use 'variables';
+@import '~bootstrap/dist/css/bootstrap.css';
+
+html {
+  height: 100vh;
+  width: 100vw;
+  font-family: Times, 'Helvetica Neue', sans-serif;
+}
+
+body {
+  @include mixins.width-height-100();
+  margin: 0;
+  font-size: variables.$app-font-size;
+  color: var(--color-primary);
+
+  &.light-theme {
+    @include mixins.backgroundOnPage('/assets/pictures/website-background/light-background.jpeg');
+  }
+
+  &.dark-theme {
+    @include mixins.backgroundOnPage('/assets/pictures/website-background/dark-background.jpeg');
+  }
+}
+
+a {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-primary);
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: unset;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: gray;
+    opacity: 0;
+    transition: opacity 300ms, transform 300ms;
+    transform: scale(0);
+    transform-origin: center;
+  }
+
+  &.active::after,
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+button {
+  background-color: rgba(var(--background-secondary-rgb), 0.5);
+  color: var(--color-primary);
+  border: none;
+  padding: 0 20px;
+}
+
+.grid-wrapper {
+  height: 100%;
+}
+
+.shopping-page-content-wrapper {
+  height: 100%;
+  @include mixins.flex(true);
+}
+
+.small-screen-only {
+  display: none;
+}
+
+.active {
+  font-weight: 600;
+}
+
+textarea.ng-touched.ng-invalid {
+  border: 1px solid var(--app-error);
+}

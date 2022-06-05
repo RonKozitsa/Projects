@@ -1,0 +1,34 @@
+@use 'variables';
+@use 'mixins';
+
+.header-content {
+  @include mixins.flex($center: true);
+  height: var(--navigation-height);
+  z-index: 1;
+
+  .navigation {
+    margin: 0 auto;
+  }
+
+  .logo-container {
+    @include mixins.flex($center: true);
+    width: variables.$side-menu-width;
+    height: var(--navigation-height);
+
+    .logo {
+      height: 100%;
+      cursor: pointer;
+    }
+  }
+
+  .social-media {
+    margin-right: 40px;
+    height: var(--navigation-height);
+  }
+
+  .theme-controller {
+    height: var(--navigation-height);
+    width: 40px;
+    padding-right: 20px;
+  }
+}
