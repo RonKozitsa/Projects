@@ -1,0 +1,37 @@
+{
+  "manifest_version" : 2,
+  "name" : "fix_moodle",
+  "version" : "1.0",
+  "description": "this will fix the annoying error of not being able to connect to MyIDC",
+  "icons": {
+    "128": "moodle-icon.png",
+    "48" : "moodle-icon.png",
+    "16" : "moodle-icon.png"
+  },
+  "page_action": {
+    "default_icon" : "moodle-icon.png",
+    "default_popup" : "default-popup.html",
+    "default_title" : "I'll fix that moodle shit for you :)"
+  },
+  "background" : {
+    "scripts" : [
+      "eventPage.js"
+    ],
+    "persistent" : false
+  },
+
+  "content_scripts" : [
+    {
+      "matches" : ["https://my.idc.ac.il/*"],
+      "js" : ["moodle-fix-content-script.js"]
+    }
+  ],
+
+  "permissions": [
+    "tabs",
+    "https://my.idc.ac.il/*",
+    "cookies",
+    "http://*/*",
+    "https://*/*"
+  ]
+}
