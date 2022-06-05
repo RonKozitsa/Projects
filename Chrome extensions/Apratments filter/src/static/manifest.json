@@ -3,16 +3,17 @@
   "name": "Apartments filter",
   "version": "1.0.0",
   "description": "Mark an apartment as 'don't show again' and you will not see it again next time",
-  "icons" : {
-    "16": "icon.png",
-    "48": "icon.png",
-    "128": "icon.png"
+  "icons": {
+    "16": "home-icon.png",
+    "32": "home-icon.png",
+    "48": "home-icon.png",
+    "128": "home-icon.png"
   },
   "action": {
     "default_icon": {
-      "16": "icon.png",
-      "24": "icon.png",
-      "32": "icon.png"
+      "16": "home-icon.png",
+      "24": "home-icon.png",
+      "32": "home-icon.png"
     },
     "default_title": "Click Me",
     "default_popup": "popup.html"
