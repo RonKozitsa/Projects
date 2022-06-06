@@ -1,0 +1,10 @@
+Developed a website for my wife's paintings, the website is very simple, I made it also to practice newly learned skills of AWS.
+The website is deployed on Amazon AWS:
+- Ststic website is stored on S3 bucket
+- Routing and DNS resolvig is done by Amazon Route53
+- Cloudfront is used to serve content from closest point to the user
+- Secure https connection using AWS certificate service (not needed on this site, but nice to have)
+- Complete CI/CD with AWS CodeCommit, AWS CodeBuild, AWS CodeDeploy, and AWS CodePipeline
+
+
+Visit website here - https://blooming-arts.com

@@ -1,0 +1,4 @@
+As a student, when loging into the Reichman University site, they had an annoying issue that showed an error message and this could only be fixed 
+by clearing cookies and local storage and refreshing the page.
+For me, as a developer, it is simple to fix, but for people with no technical knowledge, it is more complex to do, so I developed this extension that does
+it with a click of a button.

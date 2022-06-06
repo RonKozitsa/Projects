@@ -7,4 +7,4 @@ Furthermore, the app would be able to pull comments from the different platforms
 1. Categorizing bad comments and good comments and visualizing it for the business owner , showing him how is doing with time and what clients think of his bussines.
 2. Recognizing issues and offering solutions, meaning, if 10 costumers complained about dirty toilets today, a notification would be sent to the business owner with an offer for a reccomended cleaning service (including special discount for using the app's service)
 
-* Note - The code was written in 30 hours of consistent work (without sleep) and therefore is not written with any overview of beauty nor performance     
+* Note - The code was written in less than 24 hours of consistent work (without sleep, and with many breaks) and therefore is not written with any overview of beauty nor performance     
