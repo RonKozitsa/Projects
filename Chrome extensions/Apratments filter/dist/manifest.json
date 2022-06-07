@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Apartments filter",
+  "version": "1.0.0",
+  "description": "Mark an apartment as 'don't show again' and you will not see it again next time",
+  "icons": {
+    "16": "home-icon.png",
+    "32": "home-icon.png",
+    "48": "home-icon.png",
+    "128": "home-icon.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "home-icon.png",
+      "24": "home-icon.png",
+      "32": "home-icon.png"
+    },
+    "default_title": "Click Me",
+    "default_popup": "popup.html"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "search"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.rightmove.co.uk/property-to-rent/*", "https://*.onthemarket.com/to-rent/*"],
+      "js": ["contentScript.js"]
+    }
+  ]
+}
