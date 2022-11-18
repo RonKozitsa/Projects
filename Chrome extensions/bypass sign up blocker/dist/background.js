@@ -1,0 +1,1 @@
+(()=>{let e;chrome.runtime.onMessage.addListener((function(t,r,i){"popup"===(null==t?void 0:t.from)&&"bypass"===t.action&&chrome.scripting.executeScript({target:{tabId:e},files:["contentScript.js"]})})),chrome.tabs.query({active:!0,currentWindow:!0},(t=>e=t[0].id)),chrome.tabs.onUpdated.addListener((t=>{e=t}))})();

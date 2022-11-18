@@ -1,0 +1,1 @@
+(()=>{const o=Array.from(document.querySelectorAll("*[id]")).filter((o=>o.id.toLowerCase().includes("overlay")));console.log(o),o.forEach((o=>{console.log(o),o.parentNode.removeChild(o)})),document.body.classList.add("bypassScroll")})();

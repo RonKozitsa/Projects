@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Bypass blocked content",
+  "version": "1.0.0",
+  "description": "try to read a blocked site",
+  "icons": {
+    "16": "bypass.png",
+    "32": "bypass.png",
+    "48": "bypass.png",
+    "128": "bypass.png"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "bypass.png",
+      "24": "bypass.png",
+      "32": "bypass.png"
+    },
+    "default_title": "Click Me",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "css": ["contentScriptStyle.css"]
+    }
+  ]
+}
