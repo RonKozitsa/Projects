@@ -2,18 +2,18 @@ import React from 'react';
 import ReactDOM from "react-dom/client";
 
 
-
 const Popup: React.FC = () => {
 
     const sendClickedMessage = () => {
-        chrome.runtime.sendMessage(
-            {from: "popup", action: "bypass"},
-        );
+        chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
+            chrome.tabs.sendMessage(tabs[0].id, {type: 'bypass'});
+        });
+
     }
 
     return (
         <div className="extension-wrapper">
-            <button id="bypassBtn" onClick={sendClickedMessage}>Try to read site</button>
+            <button onClick={sendClickedMessage}>Try to read site</button>
         </div>
     )
 }

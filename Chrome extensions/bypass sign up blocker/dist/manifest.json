@@ -11,7 +11,7 @@
   },
   "permissions": [
     "activeTab",
-    "scripting"
+    "tabs"
   ],
   "action": {
     "default_icon": {

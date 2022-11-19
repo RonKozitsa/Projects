@@ -1,1 +1,1 @@
-(()=>{const o=Array.from(document.querySelectorAll("*[id]")).filter((o=>o.id.toLowerCase().includes("overlay")));console.log(o),o.forEach((o=>{console.log(o),o.parentNode.removeChild(o)})),document.body.classList.add("bypassScroll")})();
+chrome.runtime.onMessage.addListener(((e,r,o)=>{"bypass"===e.type&&(Array.from(document.querySelectorAll("*[id]")).filter((e=>e.id.toLowerCase().includes("overlay"))).forEach((e=>e.parentNode.removeChild(e))),document.body.classList.add("bypassScroll"))}));
